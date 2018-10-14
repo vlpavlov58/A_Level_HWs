@@ -11,24 +11,15 @@ namespace HW
         static void Main(string[] args)
         {
             var matrix = GenerateMatrix(5, 5, 20);
-
             DrawMatrix(matrix);
-
             MaxSum(matrix);
-
-
-
-            
-
             Console.ReadLine();
         }
 
         public static int[,] GenerateMatrix(int x, int y, int maxRandom = 10)
         {
             int[,] matrix = new int[x, y];
-
             Random rnd = new Random();
-
             for (int i = 0; i < x; i++)
             {
                 for (int j = 0; j < y; j++)
@@ -36,7 +27,6 @@ namespace HW
                     matrix[i, j] = rnd.Next(0, maxRandom);
                 }
             }
-
             return matrix;
         }
 
@@ -64,7 +54,6 @@ namespace HW
             int index = Array.IndexOf(temp, max);
             Console.WriteLine();
             Console.WriteLine($"Max Sum in Coloumn: # {index+1}");
-
         }
 
         public static void DrawMatrix(int[,] matrix)
