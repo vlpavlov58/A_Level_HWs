@@ -14,7 +14,9 @@ namespace HW
 
             DrawMatrix(matrix);
 
-            Sum(matrix);
+            MaxSum(matrix);
+
+
 
             
 
@@ -38,19 +40,31 @@ namespace HW
             return matrix;
         }
 
-        public static void Sum(int[,] matrix)
+        public static void MaxSum(int[,] matrix)
         {
-            int[] sum = {0};
+            int[] temp = new int[matrix.GetLength(0)];
 
             for (int j = 0; j < matrix.GetLength(0); j++)
             {
                 for (int i = 0; i < matrix.GetLength(1); i++)
                 {
-                    
-                        sum[j] += matrix[i, j];
-                    Console.WriteLine(sum[j]);
+                    temp[j] += matrix[i, j];
+                }
+                Console.Write(temp[j] + " ");
+            }
+            
+            int max = int.MinValue;
+            for (int i = 0; i < temp.Length; i++)
+            {
+                if (temp[i] > max)
+                {
+                    max = temp[i];
                 }
             }
+            int index = Array.IndexOf(temp, max);
+            Console.WriteLine();
+            Console.WriteLine($"Max Sum in Coloumn: # {index+1}");
+
         }
 
         public static void DrawMatrix(int[,] matrix)
