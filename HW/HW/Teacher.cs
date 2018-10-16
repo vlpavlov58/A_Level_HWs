@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace HW
 {
-    class Program
+    class Teacher
     {
-        static void Main(string[] args)
-        {
-            
-        }
+        public string Name { get; set; }
+        public string Position { get; set; }
+
     }
 }
